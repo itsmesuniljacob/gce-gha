@@ -46,4 +46,4 @@ jobs:
     
     - name: Install nginx
       run: |
-        apt install nginx
+        sudo apt install nginx
