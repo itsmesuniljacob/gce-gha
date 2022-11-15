@@ -54,5 +54,5 @@ jobs:
     
     - name: Install nginx
       run: |
-        gcloud compute ssh --zone "asia-south1-c" "test-instance"  --tunnel-through-iap --project "kubernetes-istio-gcp"
+        gcloud compute ssh --zone "asia-south1-c" "test-instance" --project "kubernetes-istio-gcp"
         sudo apt install nginx -y
