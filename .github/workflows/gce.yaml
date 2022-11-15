@@ -53,4 +53,6 @@ jobs:
     #     script: ./script.sh
     
     - name: Install nginx
-      run: ./script.sh
+      run: |
+        chmod +x ./script.sh 
+        ./script.sh
