@@ -44,15 +44,13 @@ jobs:
       with:
         credentials_json: '${{ secrets.CREDENTIALS_VM }}'
 
-    - id: 'compute-ssh'
-      uses: 'google-github-actions/ssh-compute@v0'
-      with:
-        instance_name: $GCE_INSTANCE
-        zone: $GCE_INSTANCE_ZONE
-        ssh_private_key: '${{ secrets.CREDENTIALS_VM }}'
-        script: ./script.sh
+    # - id: 'compute-ssh'
+    #   uses: 'google-github-actions/ssh-compute@v0'
+    #   with:
+    #     instance_name: $GCE_INSTANCE
+    #     zone: $GCE_INSTANCE_ZONE
+    #     ssh_private_key: '${{ secrets.CREDENTIALS_VM }}'
+    #     script: ./script.sh
     
-    # - name: Install nginx
-    #   run: |
-    #     gcloud compute ssh --zone "asia-south1-c" "test-instance" --project "kubernetes-istio-gcp"
-    #     sudo apt install nginx -y
+    - name: Install nginx
+      run: ./script.sh
