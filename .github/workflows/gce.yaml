@@ -46,4 +46,5 @@ jobs:
     
     - name: Install nginx
       run: |
-        sudo apt install nginx
+        gcloud beta compute ssh $GCE_INSTANCE --project $PROJECT_ID --zone $GCE_INSTANCE_ZONE
+        sudo apt install nginx -y
