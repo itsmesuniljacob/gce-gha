@@ -47,7 +47,7 @@ jobs:
     - id: 'compute-ssh'
       uses: 'google-github-actions/ssh-compute@v0'
       with:
-        instance_name: $GCE_INSTANCE
-        zone: $GCE_INSTANCE_ZONE
+        instance_name: ansible
+        zone: us-central1-a
         ssh_private_key: '${{ secrets.SSH_KEY }}'
         script: ./script.sh
