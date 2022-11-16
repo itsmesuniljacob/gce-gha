@@ -48,7 +48,7 @@ jobs:
         export ANSIBLE_REMOTE_USER="sa_$(cat account.json | jq -r '.client_id')"
         export ANSIBLE_HOST_KEY_CHECKING=False
         export GOOGLE_APPLICATION_CREDENTIALS="account.json"
-        ansible-playbook -v -i ./ansible/inventory/stg-gcp.yaml  ./ansible/playbooks/*.yaml
+        ansible-playbook -v -i ./ansible/inventory/inventory  ./ansible/playbooks/*.yaml
       env:
         STG_PRIVATE_KEY: ${{ secrets.CREDENTIALS_VM }}
         FTP_SERVER_KEY: ${{ secrets.FTP_SERVER_KEY_STG }}
