@@ -4,7 +4,7 @@ auth_kind: application
 projects:
   - kubernetes-istio-gcp
 filters:
-  - labels.nginx != ""
-keyed_groups:
-  - key: labels.nginx
+  - labels.magengto != ""
+keyed_groups:2
+  - key: labels.magengto
     separator: ''
