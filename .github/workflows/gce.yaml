@@ -17,12 +17,12 @@ name: Build and Deploy to Google Compute Engine
 on:
   push:
     branches:
-    - 'master'
+    - 'main'
 
 env:
   PROJECT_ID: ${{ secrets.GCP_PROJECT }}
-  GCE_INSTANCE: test-instance
-  GCE_INSTANCE_ZONE: asia-south1-c
+  GCE_INSTANCE: ansible
+  GCE_INSTANCE_ZONE: us-central1-a
 
 jobs:
   setup-build-publish-deploy:
@@ -44,15 +44,10 @@ jobs:
       with:
         credentials_json: '${{ secrets.CREDENTIALS_VM }}'
 
-    # - id: 'compute-ssh'
-    #   uses: 'google-github-actions/ssh-compute@v0'
-    #   with:
-    #     instance_name: $GCE_INSTANCE
-    #     zone: $GCE_INSTANCE_ZONE
-    #     ssh_private_key: '${{ secrets.CREDENTIALS_VM }}'
-    #     script: ./script.sh
-    
-    - name: Install nginx
-      run: |
-        chmod +x ./script.sh 
-        ./script.sh
+    - id: 'compute-ssh'
+      uses: 'google-github-actions/ssh-compute@v0'
+      with:
+        instance_name: $GCE_INSTANCE
+        zone: $GCE_INSTANCE_ZONE
+        ssh_private_key: '${{ secrets.SSH_KEY }}'
+        script: ./script.sh
