@@ -2,7 +2,7 @@
 - vars:
     playbook_name: setup-stg
   name: "{{ playbook_dir }}/{{ playbook_name }}"
-  hosts: nginx
+  hosts: ansible
   tasks:
     - name: "Check hostname"
       shell:
