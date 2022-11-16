@@ -8,3 +8,8 @@ filters:
 keyed_groups:
   - key: labels.ansible
     separator: ''
+compose:
+    # Set an inventory parameter to use the Public IP address to connect to the host
+    # If you have a public IP, use "networkInterfaces[0].accessConfigs[0].natIP".
+    # But in this scenario, you may only have a private IP, so instead use:
+    ansible_host: networkInterfaces[0].networkIP
