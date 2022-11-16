@@ -41,7 +41,6 @@ jobs:
         chmod 600 ~/.ssh/id_rsa
         eval "$(ssh-agent -s)"
         ssh-add ~/.ssh/id_rsa
-        gcloud compute os-login ssh-keys add --key-file ~/.ssh/id_rsa.pub --ttl $OS_LOGIN_SSH_TTL
         export ANSIBLE_REMOTE_USER="sa_$(cat account.json | jq -r '.client_id')"
         export ANSIBLE_HOST_KEY_CHECKING=False
         export GOOGLE_APPLICATION_CREDENTIALS="account.json"
