@@ -2,9 +2,9 @@
 plugin: gcp_compute
 auth_kind: application
 projects:
-  - ebo-staging
+  - kubernetes-istio-gcp
 filters:
-  - labels.ansible != ""
+  - labels.nginx != ""
 keyed_groups:
-  - key: labels.ansible
+  - key: labels.nginx
     separator: ''
