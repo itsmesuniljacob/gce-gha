@@ -34,7 +34,6 @@ jobs:
     - name: Set up Ansible & SSH
       run: |
         apk add ansible --update
-        gcloud auth activate-service-account --key-file=account.json --project=kubernetes-istio-gcp
         pip3 install requests google-auth
         apk add jq --update
         export ANSIBLE_REMOTE_USER="sa_$(cat account.json | jq -r '.client_id')"
