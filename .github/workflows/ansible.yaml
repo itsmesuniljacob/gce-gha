@@ -1,3 +1,12 @@
+name: 'Ansible Config STG'
+on:
+  workflow_dispatch:
+      inputs:
+        logLevel:
+          description: environment   
+          required: true
+          default: stg
+
 jobs:
 
   playbook-dev:
