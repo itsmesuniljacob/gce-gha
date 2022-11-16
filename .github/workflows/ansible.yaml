@@ -34,19 +34,11 @@ jobs:
     - name: Set up Ansible & SSH
       run: |
         apk add ansible --update
-        echo $STG_PRIVATE_KEY > account.json
         gcloud auth activate-service-account --key-file=account.json --project=kubernetes-istio-gcp
         pip3 install requests google-auth
         apk add jq --update
-        mkdir ~/.ssh
-        echo $FTP_SERVER_KEY_STG > ~/.ssh/id_rsa
-        ssh-keygen -t rsa -N '' -f ~/.ssh/id_rsa <<< y
-        chmod 600 ~/.ssh/id_rsa
-        eval "$(ssh-agent -s)"
-        ssh-add ~/.ssh/id_rsa
         export ANSIBLE_REMOTE_USER="sa_$(cat account.json | jq -r '.client_id')"
         export ANSIBLE_HOST_KEY_CHECKING=False
-        export GOOGLE_APPLICATION_CREDENTIALS="account.json"
         ansible-playbook -v -i ./ansible/inventory/stg-gcp.yaml  ./ansible/playbooks/*.yaml
       env:
         STG_PRIVATE_KEY: ${{ secrets.CREDENTIALS_VM }}
