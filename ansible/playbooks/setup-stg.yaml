@@ -9,4 +9,4 @@
         hostname
       register: host_info
     - debug:
-        msg: "{{os_info.stdout_lines}}"
+        msg: "{{host_info.stdout_lines}}"
