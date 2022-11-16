@@ -36,7 +36,6 @@ jobs:
         apk add ansible --update
         pip3 install requests google-auth
         apk add jq --update
-        export ANSIBLE_REMOTE_USER="sa_$(cat account.json | jq -r '.client_id')"
         export ANSIBLE_HOST_KEY_CHECKING=False
         ansible-playbook -v -i ./ansible/inventory/stg-gcp.yaml  ./ansible/playbooks/*.yaml
       env:
