@@ -28,6 +28,9 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
 
+    - name: List
+      run: ls -al
+
     - name: Set up Ansible & SSH
       run: |
         apk add ansible --update
