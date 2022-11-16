@@ -4,7 +4,7 @@ auth_kind: application
 projects:
   - kubernetes-istio-gcp
 filters:
-  - labels.magento != ""
+  - labels.ansible != ""
 keyed_groups:
-  - key: labels.magento
+  - key: labels.ansible
     separator: ''
