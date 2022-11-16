@@ -1,0 +1,12 @@
+---
+- vars:
+    playbook_name: setup-stg
+  name: "{{ playbook_dir }}/{{ playbook_name }}"
+  hosts: nginx
+  tasks:
+    - name: "Check hostname"
+      shell:
+        hostname
+      register: host_info
+    - debug:
+        msg: "{{os_info.stdout_lines}}"

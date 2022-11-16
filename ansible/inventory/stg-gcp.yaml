@@ -1,0 +1,10 @@
+---
+plugin: gcp_compute
+auth_kind: application
+projects:
+  - ebo-staging
+filters:
+  - labels.ansible != ""
+keyed_groups:
+  - key: labels.ansible
+    separator: ''
