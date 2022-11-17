@@ -38,6 +38,7 @@ jobs:
         apk add jq --update
         echo $STG_PRIVATE_KEY > account.json
         gcloud auth activate-service-account --key-file=account.json --project=ebo-staging
+        gcloud config set project ebo-staging
         pip3 install requests google-auth
         apk add jq --update
         mkdir ~/.ssh
