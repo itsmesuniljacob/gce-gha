@@ -3,6 +3,6 @@ plugin: gcp_compute
 projects:
   - core-commerce-dev
 filters:
-  - labels.ansible = magento
+  - labels.ansible != ""
 keyed_groups:
   - key: labels.ansible
