@@ -2,7 +2,10 @@
 plugin: gcp_compute
 projects:
   - kubernetes-istio-gcp
-filters:
-  - labels.ansible != ""
 keyed_groups:
-  - key: labels.ansible
+- key: labels
+groups:
+ansible : "ansible in label"
+compose:
+# set the ansible_host variable to connect with the private IP address without changing the hostname
+ansible_host: name
