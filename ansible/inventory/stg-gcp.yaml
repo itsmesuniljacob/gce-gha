@@ -1,17 +1,12 @@
 ---
 plugin: gcp_compute
-auth_kind: application
 projects:
-  - kubernetes-istio-gcp
+- kubernetes-istio-gcp
+auth_kind: application
 keyed_groups:
-  - key: labels
-    prefix: label
-  - key: zone
-    prefix: zone
-  - key: (tags.items|list)
-    prefix: tag
+- key: labels
 groups:
-  gke: "'ansible' in name"
+magento : "magento in label"
 compose:
-  # set the ansible_host variable to connect with the private IP address without changing the hostname
-  ansible_host: name
+# set the ansible_host variable to connect with the private IP address without changing the hostname
+ansible_host: name
