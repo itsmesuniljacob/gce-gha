@@ -3,6 +3,6 @@ plugin: gcp_compute
 projects:
   - kubernetes-istio-gcp
 filters:
-  - labels.ansible != ""
+  - labels.ansible = magento
 keyed_groups:
   - key: labels.ansible
