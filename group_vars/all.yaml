@@ -1,1 +1,0 @@
-ansible_ssh_common_args: "-o ProxyCommand='gcloud compute start-iap-tunnel %h %p --listen-on-stdin --zone  --project '"
