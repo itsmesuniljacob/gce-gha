@@ -36,9 +36,9 @@ jobs:
         apk add ansible --update
         pip3 install requests google-auth
         apk add jq --update
-        echo $STG_PRIVATE_KEY > account.json
-        gcloud auth activate-service-account --key-file=account.json --project=ebo-staging
-        gcloud config set project ebo-staging
+        echo $CREDENTIALS_VM > account.json
+        gcloud auth activate-service-account --key-file=account.json --project=kubernetes-istio-gcp
+        gcloud config set project kubernetes-istio-gcp
         pip3 install requests google-auth
         apk add jq --update
         mkdir ~/.ssh

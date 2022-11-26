@@ -6,7 +6,7 @@ auth_kind: application
 keyed_groups:
 - key: labels
 groups:
-magento : "magento in label"
+ansible : "ansible in label"
 compose:
 # set the ansible_host variable to connect with the private IP address without changing the hostname
 ansible_host: name
