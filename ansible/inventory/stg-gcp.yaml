@@ -1,7 +1,7 @@
 ---
 plugin: gcp_compute
 projects:
-  - core-commerce-dev
+  - kubernetes-istio-gcp
 filters:
   - labels.ansible != ""
 keyed_groups:
