@@ -2,7 +2,7 @@
 - vars:
     playbook_name: setup-stg
   name: "{{ playbook_dir }}/{{ playbook_name }}"
-  hosts: all
+  hosts: magento
   tasks:
     - name: "Check hostname"
       shell:
